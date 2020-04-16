@@ -63,6 +63,7 @@ def counter_label(label):
 def Start(label): 
     global running 
     running=True
+    meta_lable['text']=" work           break"
     counter_label(label) 
     start['state']='disabled'
     stop['state']='normal'
@@ -107,7 +108,7 @@ root.minsize(width=200, height=140)
 
 label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
 
-meta_lable = Tkinter.Label(root, text="test", fg="grey", font="Verdana 10 bold") 
+meta_lable = Tkinter.Label(root, text="", fg="grey", font="Verdana 15 bold") 
 
 meta_lable.pack()
 label.pack() 
