@@ -103,7 +103,13 @@ root.title("Stopwatch")
   
 # Fixing the window size. 
 root.minsize(width=200, height=140) 
+
+
 label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
+
+meta_lable = Tkinter.Label(root, text="test", fg="grey", font="Verdana 10 bold") 
+
+meta_lable.pack()
 label.pack() 
 
 #this text defines the buttons that call the functions
