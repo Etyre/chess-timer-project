@@ -1,8 +1,8 @@
 # Python program to illustrate a stop watch 
-# using Tkinter 
+# using tkinter 
 #importing the required libraries 
-import Tkinter as Tkinter 
-# note to future self: Tkinter is capitalized for python 2, but not for python 3.
+import tkinter as tkinter 
+# note to future self: tkinter is capitalized for python 2, but not for python 3.
   
 counterR = 4 * 60 * 60
 counterL = 4 * 60 * 60
@@ -18,18 +18,19 @@ def make_string_and_show_two_digits(number):
 
 
 def convert_seconds_to_time_format(total_seconds):
-    hours = total_seconds / 3600
-    minutes = (total_seconds%3600) / 60
+    hours = total_seconds // 3600
+    minutes = (total_seconds%3600) // 60
     seconds = (total_seconds%3600)%60
     full_timer = make_string_and_show_two_digits(hours)+":"+make_string_and_show_two_digits(minutes)+":"+make_string_and_show_two_digits(seconds)
     return full_timer
 
 def counter_label(label): 
     def count(): 
-        if running: 
+        if running:
+            global rocker
             global counterR 
             global counterL
-            global rocker
+            global rockerS
 
             if counterR <=0:             
                 rocker = "L"
@@ -99,31 +100,31 @@ def Reset(label):
     else:                
         label['text']='Starting...'
   
-root = Tkinter.Tk() 
+root = tkinter.Tk() 
 root.title("Stopwatch") 
   
 # Fixing the window size. 
 root.minsize(width=200, height=140) 
 
 
-label = Tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
+label = tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
 
-meta_lable = Tkinter.Label(root, text="", fg="grey", font="Verdana 15 bold") 
+meta_lable = tkinter.Label(root, text="", fg="grey", font="Verdana 15 bold") 
 
 meta_lable.pack()
 label.pack() 
 
 #this text defines the buttons that call the functions
-start = Tkinter.Button(root, text='Start',  
+start = tkinter.Button(root, text='Start',  
 width=15, command=lambda:Start(label))
 
-stop = Tkinter.Button(root, text='Stop',  
+stop = tkinter.Button(root, text='Stop',  
 width=15, state='disabled', command=Stop) 
 
-switch = Tkinter.Button(root, text='Switch',  
+switch = tkinter.Button(root, text='Switch',  
 width=15, command=lambda:Switch(label))
 
-reset = Tkinter.Button(root, text='Reset', 
+reset = tkinter.Button(root, text='Reset', 
  width=15, state='disabled', command=lambda:Reset(label)) 
 
 #this text puts the button in the GUI
