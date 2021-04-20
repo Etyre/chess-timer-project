@@ -68,7 +68,7 @@ def Start(label):
     counter_label(label) 
     start['state']='disabled'
     stop['state']='normal'
-    reset['state']='normal'
+    reset['state']='disabled'
   
 # Stop function of the stopwatch 
 def Stop(): 
@@ -96,6 +96,8 @@ def Reset(label):
         reset['state']='disabled'
         label['text']='Welcome!'
         # reset the counters
+        global counterR
+        global counterL
         counterR = 4 * 60 * 60
         counterL = 4 * 60 * 60
   
@@ -107,7 +109,7 @@ root = tkinter.Tk()
 root.title("Stopwatch") 
   
 # Fixing the window size. 
-root.minsize(width=400, height=200) 
+root.minsize(width=350, height=200) 
 
 
 label = tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
@@ -121,7 +123,7 @@ label.pack()
 start = tkinter.Button(root, text='Start',  
 width=15, command=lambda:Start(label))
 
-stop = tkinter.Button(root, text='Stop',  
+stop = tkinter.Button(root, text='Pause',  
 width=15, state='disabled', command=Stop) 
 
 switch = tkinter.Button(root, text='Switch',  
