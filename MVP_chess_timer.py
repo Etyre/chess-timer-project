@@ -128,13 +128,14 @@ width=15, state='disabled', command=Stop)
 
 switch = tkinter.Button(root, text='Switch',  
 width=15, command=lambda:Switch(label))
+#note that I might like to change this button to be bigger and a different color or something
 
 reset = tkinter.Button(root, text='Reset', 
  width=15, state='disabled', command=lambda:Reset(label)) 
 
 #this text puts the button in the GUI
+switch.pack()
 start.pack() 
-stop.pack()
-switch.pack() 
+stop.pack() 
 reset.pack() 
 root.mainloop() 
