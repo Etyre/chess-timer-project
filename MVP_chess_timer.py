@@ -91,10 +91,13 @@ def Reset(label):
     global counter 
     counter=-1
   
-    # If rest is pressed after pressing stop. 
+    # If reset is pressed after pressing stop. 
     if running==False:       
         reset['state']='disabled'
         label['text']='Welcome!'
+        # reset the counters
+        counterR = 4 * 60 * 60
+        counterL = 4 * 60 * 60
   
     # If reset is pressed while the stopwatch is running. 
     else:                
@@ -104,7 +107,7 @@ root = tkinter.Tk()
 root.title("Stopwatch") 
   
 # Fixing the window size. 
-root.minsize(width=200, height=140) 
+root.minsize(width=400, height=200) 
 
 
 label = tkinter.Label(root, text="Welcome!", fg="black", font="Verdana 30 bold") 
